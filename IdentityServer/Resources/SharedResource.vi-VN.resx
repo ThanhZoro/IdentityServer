@@ -1,0 +1,600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lengthRequired" xml:space="preserve">
+    <value>{0} phải ít nhất {2} và nhiều nhất {1} ký tự.</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="phoneRequired" xml:space="preserve">
+    <value>Nhập số điện thoại.</value>
+  </data>
+  <data name="passwordRequired" xml:space="preserve">
+    <value>Nhập mật khẩu.</value>
+  </data>
+  <data name="usernameRequired" xml:space="preserve">
+    <value>Nhập tài khoản.</value>
+  </data>
+  <data name="contactUs" xml:space="preserve">
+    <value>Liên hệ</value>
+  </data>
+  <data name="getStarted" xml:space="preserve">
+    <value>BẮT ĐẦU</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="emailInvalid" xml:space="preserve">
+    <value>Email không hợp lệ.</value>
+  </data>
+  <data name="emailRequired" xml:space="preserve">
+    <value>Vui lòng nhập email.</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Họ tên</value>
+  </data>
+  <data name="aboutUs" xml:space="preserve">
+    <value>Về chúng tôi</value>
+  </data>
+  <data name="blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="business" xml:space="preserve">
+    <value>Nâng tầm doanh nghiệp của bạn.</value>
+  </data>
+  <data name="careers" xml:space="preserve">
+    <value>Tuyển dụng.</value>
+  </data>
+  <data name="community" xml:space="preserve">
+    <value>Cộng đồng</value>
+  </data>
+  <data name="customerStories" xml:space="preserve">
+    <value>Customer Success Stories</value>
+  </data>
+  <data name="custormers" xml:space="preserve">
+    <value>Khách hàng</value>
+  </data>
+  <data name="learnMore" xml:space="preserve">
+    <value>TÌM HIỂU THÊM</value>
+  </data>
+  <data name="mobileApp" xml:space="preserve">
+    <value>Ứng dụng trên điện thoại cho môi giới</value>
+  </data>
+  <data name="moreInfo" xml:space="preserve">
+    <value>Thông tin thêm</value>
+  </data>
+  <data name="namlong" xml:space="preserve">
+    <value>Tầng 6, toà nhà Bitexco Nam Long , 63A đường Võ Văn Tần , phường 6, quận 3 , Tp. HCM, Việt nam,</value>
+  </data>
+  <data name="news" xml:space="preserve">
+    <value>Tin tức</value>
+  </data>
+  <data name="o2o" xml:space="preserve">
+    <value>Giải pháp theo dõi O2O</value>
+  </data>
+  <data name="ourStory" xml:space="preserve">
+    <value>Giới thiệu</value>
+  </data>
+  <data name="partners" xml:space="preserve">
+    <value>Đối tác</value>
+  </data>
+  <data name="privacy" xml:space="preserve">
+    <value>Bảo mật</value>
+  </data>
+  <data name="product&amp;service" xml:space="preserve">
+    <value>Sản phẩm &amp; giá dịch vụ</value>
+  </data>
+  <data name="products" xml:space="preserve">
+    <value>Sản phẩm</value>
+  </data>
+  <data name="realEstate" xml:space="preserve">
+    <value>Giải pháp công nghệ tiên tiến cho bất động sản</value>
+  </data>
+  <data name="sendUs" xml:space="preserve">
+    <value>Gửi ngay</value>
+  </data>
+  <data name="services" xml:space="preserve">
+    <value>Dịch vụ</value>
+  </data>
+  <data name="solutionDeveloper" xml:space="preserve">
+    <value>Giải pháp cho chủ đầu tư</value>
+  </data>
+  <data name="solutions" xml:space="preserve">
+    <value>Giải pháp</value>
+  </data>
+  <data name="t&amp;cs" xml:space="preserve">
+    <value>T &amp; Cs</value>
+  </data>
+  <data name="twinCrm" xml:space="preserve">
+    <value>Twin CRM là gì?</value>
+  </data>
+  <data name="twinCrmContent" xml:space="preserve">
+    <value>Software solution designed for Real Estate to serve three players: Developer, Agency and Broker. It brings together all your customer information in a single, integrated platform that enables you to build a customer-centred business from marketing right through to sales, customer service and business analysis. This gives you more complete understanding of your custormer to drive your business's success.</value>
+  </data>
+  <data name="twinReal" xml:space="preserve">
+    <value>Giải pháp bất động sản Twin</value>
+  </data>
+  <data name="watchDemo" xml:space="preserve">
+    <value>XEM DEMO</value>
+  </data>
+  <data name="account" xml:space="preserve">
+    <value>tài khoản</value>
+  </data>
+  <data name="accountAlready" xml:space="preserve">
+    <value>Đã có tài khoản.</value>
+  </data>
+  <data name="anAccount" xml:space="preserve">
+    <value>tài khoản</value>
+  </data>
+  <data name="back" xml:space="preserve">
+    <value>Trở lại</value>
+  </data>
+  <data name="chooseCompany" xml:space="preserve">
+    <value>Chọn nhà hàng</value>
+  </data>
+  <data name="company" xml:space="preserve">
+    <value>tài khoản của nhà hàng</value>
+  </data>
+  <data name="continueSign" xml:space="preserve">
+    <value>Tiếp tục đăng nhập vào.</value>
+  </data>
+  <data name="createCompany" xml:space="preserve">
+    <value>Tạo một nhà hàng</value>
+  </data>
+  <data name="external" xml:space="preserve">
+    <value>tài khoản bên ngoài</value>
+  </data>
+  <data name="forgotPass" xml:space="preserve">
+    <value>Quên mật khẩu</value>
+  </data>
+  <data name="iAgree" xml:space="preserve">
+    <value>Tôi đồng ý với</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="manual" xml:space="preserve">
+    <value>Đăng ký mới</value>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>Tiếp theo</value>
+  </data>
+  <data name="orSignIn" xml:space="preserve">
+    <value>hoặc đăng nhập với tài khoản xã hội</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+  <data name="pleaseEnter" xml:space="preserve">
+    <value>Vui lòng nhập thông tin tài khoản  và bấm tiếp theo để hoàn thành đăng nhập</value>
+  </data>
+  <data name="privacyPolicy" xml:space="preserve">
+    <value>điều khoản sử dụng</value>
+  </data>
+  <data name="rememberMe" xml:space="preserve">
+    <value>Ghi nhớ mật khẩu</value>
+  </data>
+  <data name="signin" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="signinAccount" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="signinFacebook" xml:space="preserve">
+    <value>Đăng nhập với Facebook</value>
+  </data>
+  <data name="signinGoogle" xml:space="preserve">
+    <value>Đăng nhập với Google</value>
+  </data>
+  <data name="signup" xml:space="preserve">
+    <value>Đăng ký</value>
+  </data>
+  <data name="successfullyAuthenticated" xml:space="preserve">
+    <value>Bạn đã xác thực thành công với</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Tên đăng nhập</value>
+  </data>
+  <data name="businessDomain" xml:space="preserve">
+    <value>Lĩnh vực kinh doanh</value>
+  </data>
+  <data name="CompanyAddress" xml:space="preserve">
+    <value>Địa chỉ</value>
+  </data>
+  <data name="CompanyCode" xml:space="preserve">
+    <value>Tên miền của bạn</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Tên nhà hàng</value>
+  </data>
+  <data name="CompanyWebsite" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="createYour" xml:space="preserve">
+    <value>Tạo nhà hàng</value>
+  </data>
+  <data name="enter" xml:space="preserve">
+    <value>Nhập</value>
+  </data>
+  <data name="existCompany" xml:space="preserve">
+    <value>Nhà hàng hiện có cho</value>
+  </data>
+  <data name="help" xml:space="preserve">
+    <value>Cần giúp đỡ</value>
+  </data>
+  <data name="other" xml:space="preserve">
+    <value>Khác</value>
+  </data>
+  <data name="otherBusiness" xml:space="preserve">
+    <value>Kinh doanh khác</value>
+  </data>
+  <data name="realEstateAgency" xml:space="preserve">
+    <value>Đại lý phân phối bất động sản</value>
+  </data>
+  <data name="realEstateDev" xml:space="preserve">
+    <value>Chủ đầu tư bất động sản</value>
+  </data>
+  <data name="ScaleId" xml:space="preserve">
+    <value>Số lượng nhân viên</value>
+  </data>
+  <data name="signInWith" xml:space="preserve">
+    <value>Đăng nhập với tài khoản khác</value>
+  </data>
+  <data name="thereAre" xml:space="preserve">
+    <value>Có</value>
+  </data>
+  <data name="whichCompany" xml:space="preserve">
+    <value>Bạn muốn tiếp tục với nhà hàng nào</value>
+  </data>
+  <data name="yourMessage" xml:space="preserve">
+    <value>Tin nhắn của bạn</value>
+  </data>
+  <data name="yourName" xml:space="preserve">
+    <value>Tên của bạn</value>
+  </data>
+  <data name="activate" xml:space="preserve">
+    <value>Kích hoạt</value>
+  </data>
+  <data name="activation" xml:space="preserve">
+    <value>Mã kích hoạt gửi cho bạn</value>
+  </data>
+  <data name="activeAccount" xml:space="preserve">
+    <value>Kích hoạt tài khoản của bạn</value>
+  </data>
+  <data name="browse" xml:space="preserve">
+    <value>Chọn</value>
+  </data>
+  <data name="companyCodeExisted" xml:space="preserve">
+    <value>Mã nhà hàng tồn tại.</value>
+  </data>
+  <data name="companyCodeRequired" xml:space="preserve">
+    <value>Tên miền phụ là bắt buộc</value>
+  </data>
+  <data name="companyNameRequired" xml:space="preserve">
+    <value>Tên nhà hàng là bắt buộc</value>
+  </data>
+  <data name="companySuccessfully" xml:space="preserve">
+    <value>Bạn đã tạo nhà hàng thành công</value>
+  </data>
+  <data name="congratulations" xml:space="preserve">
+    <value>Chúc mừng</value>
+  </data>
+  <data name="continue" xml:space="preserve">
+    <value>Tiếp tục</value>
+  </data>
+  <data name="employee" xml:space="preserve">
+    <value>Nhân viên</value>
+  </data>
+  <data name="getCode" xml:space="preserve">
+    <value>Bạn chưa nhận được mã? Đôi khi phải mất đến</value>
+  </data>
+  <data name="howShould" xml:space="preserve">
+    <value>Chọn hình thức gửi mã kích hoạt tài khoản</value>
+  </data>
+  <data name="number" xml:space="preserve">
+    <value>số</value>
+  </data>
+  <data name="pixelsMax" xml:space="preserve">
+    <value>Kích thước tối đa</value>
+  </data>
+  <data name="placeAddress" xml:space="preserve">
+    <value>địa chỉ</value>
+  </data>
+  <data name="placeCompanyName" xml:space="preserve">
+    <value>tên nhà hàng</value>
+  </data>
+  <data name="placeSubdomain" xml:space="preserve">
+    <value>tên miền của bạn</value>
+  </data>
+  <data name="resendCode" xml:space="preserve">
+    <value>Gửi lại mã</value>
+  </data>
+  <data name="size" xml:space="preserve">
+    <value>Kích thước</value>
+  </data>
+  <data name="verification" xml:space="preserve">
+    <value>Nhập mã xác nhận</value>
+  </data>
+  <data name="verify" xml:space="preserve">
+    <value>Xác minh</value>
+  </data>
+  <data name="verifyAccount" xml:space="preserve">
+    <value>Xác minh tài khoản của bạn</value>
+  </data>
+  <data name="yourWebsite" xml:space="preserve">
+    <value>websitecuaban.com</value>
+  </data>
+  <data name="createCy" xml:space="preserve">
+    <value>Tạo nhà hàng</value>
+  </data>
+  <data name="createNot" xml:space="preserve">
+    <value>Chưa có nhà hàng nào được tạo cho</value>
+  </data>
+  <data name="dontWorry" xml:space="preserve">
+    <value>Đừng lo lắng chúng tôi sẽ gửi cho bạn email để đặt lại mật khẩu. Vui lòng nhập email của bạn.</value>
+  </data>
+  <data name="forgotPassword" xml:space="preserve">
+    <value>Quên mật khẩu</value>
+  </data>
+  <data name="loginAgain" xml:space="preserve">
+    <value>Đăng nhập lại</value>
+  </data>
+  <data name="minutes" xml:space="preserve">
+    <value>phút. Nếu lâu hơn</value>
+  </data>
+  <data name="phoneExisted" xml:space="preserve">
+    <value>Điện thoại đã tồn tại.</value>
+  </data>
+  <data name="pleaseCheck" xml:space="preserve">
+    <value>Vui lòng kiểm tra email của bạn để đặt lại mật khẩu.</value>
+  </data>
+  <data name="pleaseCreate" xml:space="preserve">
+    <value>vui lòng tạo nhà hàng</value>
+  </data>
+  <data name="resetPass" xml:space="preserve">
+    <value>Đặt lại mật khẩu</value>
+  </data>
+  <data name="usernameNotExits" xml:space="preserve">
+    <value>Người dùng không tồn tại.</value>
+  </data>
+  <data name="yourEmail" xml:space="preserve">
+    <value>Email của bạn</value>
+  </data>
+  <data name="loginAttempt" xml:space="preserve">
+    <value>Mật khẩu không chính xác.</value>
+  </data>
+  <data name="changePass" xml:space="preserve">
+    <value>Đổi mật khẩu của bạn</value>
+  </data>
+  <data name="confirmPassword" xml:space="preserve">
+    <value>Xác nhận mật khẩu</value>
+  </data>
+  <data name="companyHeader" xml:space="preserve">
+    <value>Nhà hàng</value>
+  </data>
+  <data name="hello" xml:space="preserve">
+    <value>Chào</value>
+  </data>
+  <data name="hotline" xml:space="preserve">
+    <value>Đường dây nóng</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>Đăng xuất</value>
+  </data>
+  <data name="updateProfile" xml:space="preserve">
+    <value>Cập nhật hồ sơ</value>
+  </data>
+  <data name="fullNameRequired" xml:space="preserve">
+    <value>Vui lòng nhập họ tên</value>
+  </data>
+  <data name="emailHome" xml:space="preserve">
+    <value>Nhập email</value>
+  </data>
+  <data name="phoneHome" xml:space="preserve">
+    <value>Số điện thoại</value>
+  </data>
+  <data name="usernameExisted" xml:space="preserve">
+    <value>Tên đăng nhập đã tồn tại.</value>
+  </data>
+  <data name="emailExisted" xml:space="preserve">
+    <value>Email đã tồn tại.</value>
+  </data>
+  <data name="usernameNotContainCompany" xml:space="preserve">
+    <value>Tài khoản của bạn không thuộc nhà hàng</value>
+  </data>
+  <data name="clickHere" xml:space="preserve">
+    <value>bấm vào đây để đăng nhập</value>
+  </data>
+  <data name="please" xml:space="preserve">
+    <value>Vui lòng</value>
+  </data>
+  <data name="ResetPasswordTitle" xml:space="preserve">
+    <value>Đặt lại mật khẩu thành công</value>
+  </data>
+  <data name="blockAccount" xml:space="preserve">
+    <value>Tài khoản của bạn đã bị khóa</value>
+  </data>
+  <data name="confirmNewPassword" xml:space="preserve">
+    <value>Xác nhận mật khẩu mới</value>
+  </data>
+  <data name="newPassword" xml:space="preserve">
+    <value>Mật khẩu mới</value>
+  </data>
+  <data name="oldPassword" xml:space="preserve">
+    <value>Mật khẩu cũ</value>
+  </data>
+  <data name="activationByEmail" xml:space="preserve">
+    <value>Mã kích hoạt đã gửi cho bạn qua email </value>
+  </data>
+  <data name="activationByPhone" xml:space="preserve">
+    <value>Mã kích hoạt đã gửi cho bạn qua số điện thoại </value>
+  </data>
+  <data name="verifyRemind" xml:space="preserve">
+    <value>Tài khoản của bạn đã được đăng nhập. Bạn phải xác minh để kích hoạt tài khoản</value>
+  </data>
+  <data name="messageResendCode" xml:space="preserve">
+    <value>Mã kích hoạt mới đã gửi lại cho bạn</value>
+  </data>
+  <data name="activated" xml:space="preserve">
+    <value>Tài khoản của bạn đã được kích hoạt.&lt;a href="/Company/Index"&gt; Chọn nhà hàng của bạn?&lt;/a&gt;</value>
+  </data>
+  <data name="invalidActivation" xml:space="preserve">
+    <value>Mã kích hoạt không hợp lệ</value>
+  </data>
+  <data name="contactEmail" xml:space="preserve">
+    <value>Liên hệ chúng tôi qua email</value>
+  </data>
+  <data name="contactSMS" xml:space="preserve">
+    <value>Liên hệ chúng tôi qua số điện thoại</value>
+  </data>
+  <data name="notifyOverCountSendMail" xml:space="preserve">
+    <value>Hệ thống đã gửi mã xác nhận qua email của bạn. Vui lòng kiểm tra email và hệ thống sẽ không gửi lại mã xác nhận mới.</value>
+  </data>
+  <data name="notifyOverCountSendSMS" xml:space="preserve">
+    <value>Hệ thống đã gửi mã xác nhận qua tin nhắn của bạn. Vui lòng kiểm tra email và hệ thống sẽ không gửi lại mã xác nhận mới.</value>
+  </data>
+  <data name="orEmail" xml:space="preserve">
+    <value>hoặc email</value>
+  </data>
+  <data name="orPhoneNumber" xml:space="preserve">
+    <value>hoặc số điện thoại</value>
+  </data>
+  <data name="questionRecieveCode" xml:space="preserve">
+    <value>Nếu bạn vẫn chưa nhận được mã?</value>
+  </data>
+  <data name="toSupport" xml:space="preserve">
+    <value>để được hỗ trợ.</value>
+  </data>
+  <data name="otherCompany" xml:space="preserve">
+    <value>Nhà hàng khác?</value>
+  </data>
+  <data name="firstNameRequired" xml:space="preserve">
+    <value>Nhập tên.</value>
+  </data>
+  <data name="uniqueCharacters" xml:space="preserve">
+    <value>Mật khẩu phải có ít nhất 5 ký tự khác nhau.</value>
+  </data>
+  <data name="yourCode" xml:space="preserve">
+    <value>Mã kích hoạt</value>
+  </data>
+  <data name="custormerSucceed" xml:space="preserve">
+    <value>Khách hàng thành công với Twin CRM.</value>
+  </data>
+</root>

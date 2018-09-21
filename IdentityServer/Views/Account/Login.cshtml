@@ -1,0 +1,146 @@
+﻿@using System.Collections.Generic
+@using System.Linq
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http.Authentication
+@inject LocService SharedLocalizer
+@model LoginViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    ViewData["Title"] = "Log in";
+}
+<style>
+    
+</style>
+<!-- Top content -->
+<div  id="app" class="account">
+    <!-- Top menu -->
+    <nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="@Url.Content("~/")">
+                    <img src="~/assets/img/logo.png" class="img-responsive" />
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-bg" style="padding-top:0;">
+        <div class="container">
+            <div class="row">
+                <div class="form-center">
+                    <div class="col-sm-12 form-box wow fadeInUp">
+                        <div class="form-top">
+                            <h2 class="font-weight-300">@SharedLocalizer.GetLocalizedHtmlString("signin")</h2>
+                        </div>
+                        <div class="form-bottom">
+                            <form method="post" asp-action="Login" asp-route-returnurl="@Model.ReturnUrl">
+                                <div class="form-group">
+                                    <label class="form-control-label">@SharedLocalizer.GetLocalizedHtmlString("username") *</label>
+                                    <input type="text" v-model="formData.isUserName" class="form-control input" asp-for="Username" placeholder="@SharedLocalizer.GetLocalizedHtmlString("username")" />
+                                    <div class="has-danger">
+                                        <span asp-validation-for="Username" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label class="form-control-label">@SharedLocalizer.GetLocalizedHtmlString("password") *</label>
+                                    <div style="position:relative">
+                                        <input type="password" v-model="formData.isPassword" class="form-control" asp-for="Password" id="password" placeholder="@SharedLocalizer.GetLocalizedHtmlString("password")">
+                                        <i class="custorm-eye" v-bind:class="{ 'flaticon-hide': !openEye,'flaticon-view': openEye }" id="eye" @@click="showPass()"></i>
+                                    </div>
+                                    <div class="has-danger">
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <label class=" custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">@SharedLocalizer.GetLocalizedHtmlString("rememberMe")</span>
+                                        </label>
+                                    </div>
+                                    <div class="col-xs-6 text-right">
+                                        <a asp-action="ForgotPassword" class="blue--text" asp-route-returnurl="@Model.ReturnUrl">@SharedLocalizer.GetLocalizedHtmlString("forgotPass")?</a>
+                                    </div>
+                                </div>
+
+                                <button type="submit" :disabled="disabled" class="btn btn-info background-color-twin">@SharedLocalizer.GetLocalizedHtmlString("signin")</button>
+                            </form>
+                            <p class="guide text-center top-1">@SharedLocalizer.GetLocalizedHtmlString("orSignIn")</p>
+                            <form asp-action="ExternalLogin" asp-route-returnurl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary pointer social-button facebook" name="provider" value="Facebook" title="Log in using your Facebook account">
+                                            <span class="typcn typcn-social-facebook custom-icon-buton"></span>
+                                            @SharedLocalizer.GetLocalizedHtmlString("signinFacebook")
+                                        </button>
+                                    </div>
+                                    <div class="col-md-12 top-1">
+                                        <button type="submit" class="btn btn-danger pointer social-button google" name="provider" value="Google" title="Log in using your Google account">
+                                            <span class="typcn typcn-social-google-plus custom-icon-buton"></span>
+                                            @SharedLocalizer.GetLocalizedHtmlString("signinGoogle")
+                                        </button>
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            openEye: false,
+            password: '',
+            formData: {},
+            disabled : true
+        },
+        methods: {
+            showPass() {
+                var password = document.getElementById("password");
+                if (password.type === "password") {
+                    password.type = "text";
+                    this.openEye = true;
+                } else {
+                    password.type = "password";
+                    this.openEye = false;
+                }
+            }
+        },
+        created() {
+            if ('@Model.CompanyName' !== '')
+             {
+                    var mydiv = document.getElementById("otherCompany");
+                    var aTag = document.createElement('a');
+                    aTag.setAttribute('href', "/company");
+                    aTag.style.color = 'black';
+                    aTag.innerHTML = '@SharedLocalizer.GetLocalizedHtmlString("otherCompany")';
+                    mydiv.appendChild(aTag);
+             }
+        },
+        watch: {
+            formData: {
+                handler: function (val, oldVal) {
+                    // Log it
+                    var _this = this;
+                    if ((val.isPassword && val.isPassword != "") && (val.isUserName && val.isUserName != "")) {
+                        _this.disabled = false;
+                    } else {
+                        _this.disabled = true;
+                    }
+                },
+                deep: true
+            }
+
+        }
+    })
+</script>
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

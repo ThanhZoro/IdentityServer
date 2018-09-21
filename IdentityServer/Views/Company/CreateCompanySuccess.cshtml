@@ -1,0 +1,105 @@
+﻿@model CreateCompanySuccess
+@inject SignInManager<ApplicationUser> SignInManager
+@inject LocService SharedLocalizer
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!-- Top content -->
+<div class="top-content" id="app">
+    <!-- Top menu -->
+    <nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="@Url.Content("~/")">
+                    <img src="~/assets/img/logo.png" class="img-responsive" />
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-bg" style="padding-top:0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7 text">
+                    <h1 class="wow fadeInLeftBig">Learn to Code in <strong>1 Month</strong></h1>
+                    <div class="description wow fadeInLeftBig">
+                        <p>
+                            We have been working very hard to create the new version of our course.
+                            It comes with a lot of new features, easy to follow videos and images. Check it out now!
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-5 form-box wow fadeInUp">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3>@SharedLocalizer.GetLocalizedHtmlString("companySuccessfully")</h3>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <a href="#" class="link-company">@Model.AppDomain</a>
+                        <div v-if="!picture">
+                            <i class="flaticon-photo"></i>
+                            <span class="size-image">@SharedLocalizer.GetLocalizedHtmlString("size") 200 x 200 @SharedLocalizer.GetLocalizedHtmlString("pixelsMax") 500kb</span>
+                        </div>
+                        <div v-if="picture">
+                            <img id="src-upload" class="img-responsive" src="#" alt="company logo" />
+                        </div>
+                        <form method="post" style="margin-top:10px;" asp-action="CreateCompanySuccess" enctype="multipart/form-data" id="form-upload">
+                            <input type="hidden" asp-for="AppDomain" />
+                            <input type="hidden" asp-for="CompanyId" />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="btn btn-block btn-default pointer upper-text">
+                                        <span>@SharedLocalizer.GetLocalizedHtmlString("browse")</span> <input name="FileUrl" id="getval" type="file" v-on:change="showImage" style="display: none;" accept="image/*">
+                                    </label>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="submit" class="btn btn-block btn-success pointer continue upper-text">
+                                        @SharedLocalizer.GetLocalizedHtmlString("continue")
+                                    </button>
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            picture: false,
+        },
+        methods: {
+            openFile(event, name) {
+                var file = document.getElementById(name).files[0];
+                var reader = new FileReader();
+                reader.onloadend = function (e) {
+                    $('#src-upload')
+                        .attr('src', e.target.result).width(200);
+                }
+                if (file) {
+                    reader.readAsDataURL(file);
+                } else {
+                    this.picture = false;
+                }
+            },
+            showImage(event) {
+                //show image
+                this.picture = true;
+                this.openFile(event, 'getval');
+            }
+        },
+        mounted() {
+        }
+    })
+</script>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

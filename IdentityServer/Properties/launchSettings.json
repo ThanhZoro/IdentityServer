@@ -1,0 +1,67 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:5000/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "GATEWAY_API_URL": "http://localhost",
+        "LOADBALANCER": "google.com",
+        "USER_MONGODB_HOST": "localhost",
+        "USER_MONGODB_PORT": "27017",
+        "USER_MONGODB_DATABASE_NAME": "db_users",
+        "IDENTITYSERVER_MONGODB_HOST": "localhost",
+        "IDENTITYSERVER_MONGODB_PORT": "27017",
+        "IDENTITYSERVER_MONGODB_DATABASE_NAME": "db_identityserver",
+        "COMPANY_MONGODB_HOST": "localhost",
+        "COMPANY_MONGODB_PORT": "27017",
+        "COMPANY_MONGODB_DATABASE_NAME": "db_companies",
+        "APP_DOMAIN": "localhost:7017",
+        "IS_SERVER": "http://localhost:5000",
+        "ES_PORT": "9200",
+        "ES_HOST": "localhost",
+        "RABBITMQ_HOST": "localhost",
+        "RABBITMQ_USERNAME": "guest",
+        "RABBITMQ_PASSWORD": "guest",
+        "MONGODB_USERNAME": "root",
+        "MONGODB_PASSWORD": "123456"
+      }
+    },
+    "IdentityServer": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "GATEWAY_API_URL": "http://localhost",
+        "LOADBALANCER": "google.com",
+        "USER_MONGODB_HOST": "localhost",
+        "USER_MONGODB_PORT": "27017",
+        "USER_MONGODB_DATABASE_NAME": "db_users",
+        "IDENTITYSERVER_MONGODB_HOST": "localhost",
+        "IDENTITYSERVER_MONGODB_PORT": "27017",
+        "IDENTITYSERVER_MONGODB_DATABASE_NAME": "db_identityserver",
+        "COMPANY_MONGODB_HOST": "localhost",
+        "COMPANY_MONGODB_PORT": "27017",
+        "COMPANY_MONGODB_DATABASE_NAME": "db_companies",
+        "APP_DOMAIN": "localhost:7017",
+        "IS_SERVER": "http://localhost:5000",
+        "ES_PORT": "9200",
+        "ES_HOST": "localhost",
+        "RABBITMQ_HOST": "localhost",
+        "RABBITMQ_USERNAME": "guest",
+        "RABBITMQ_PASSWORD": "guest",
+        "MONGODB_USERNAME": "root",
+        "MONGODB_PASSWORD": "123456"
+      },
+      "applicationUrl": "http://localhost:5000/"
+    }
+  }
+}

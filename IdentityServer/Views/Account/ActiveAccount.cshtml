@@ -1,0 +1,111 @@
+﻿@model VerifyViewModel
+@inject SignInManager<ApplicationUser> SignInManager
+@inject LocService SharedLocalizer
+@{
+    ViewData["Title"] = "ActiveAccount";
+}
+
+<div id="app">
+    <!-- Top content -->
+    <div class="account">
+        <!-- Top menu -->
+        <nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="@Url.Content("~/")">
+                        <img src="~/assets/img/logo.png" class="img-responsive" />
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <div class="inner-bg" style="padding-top:0;">
+            <div class="container">
+                <div class="row">
+                    <div class="form-center">
+                        <div class="col-sm-12 form-box wow fadeInUp">
+                            <div class="form-top">
+                                <h2>@SharedLocalizer.GetLocalizedHtmlString("yourCode")</h2>
+                            </div>
+                            <div id="messageResendCode" class="guide-activate-bottom">
+                                @SharedLocalizer.GetLocalizedHtmlString("messageResendCode")
+                            </div>
+                            <div class="form-bottom">
+                                <form method="post" asp-action="ActiveAccount">
+                                    <input type="hidden" name="ReturnUrl" value="@ViewData["returnUrl"]" />
+                                    <input type="hidden" name="VerifyType" value="@Model.VerifyType" />
+                                    <div class="form-group">
+                                        <label class="form-control-label">@SharedLocalizer.GetLocalizedHtmlString("verification")</label>
+                                        <input asp-for="Code" class="form-control" placeholder="@SharedLocalizer.GetLocalizedHtmlString("verification")" />
+                                        <div class="has-danger">
+                                            <div><span asp-validation-for="Code" class="text-danger"></span></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button type="submit" class="btn btn-info background-color-twin">@SharedLocalizer.GetLocalizedHtmlString("activate")</button>
+                                    </div>
+                                </form>
+                                <div>
+                                    <p>@SharedLocalizer.GetLocalizedHtmlString("getCode") 15 @SharedLocalizer.GetLocalizedHtmlString("minutes")</p>
+                                    <a href="javascript:;" v-on:click="resendCode()" class="support-link upper-text blue--text">@SharedLocalizer.GetLocalizedHtmlString("resendCode")?</a>
+                                </div>
+                                <div class="margin-top-10" v-if="CountSendNotification >= 5">
+                                    @if (Model.VerifyType == "Email")
+                                    {
+                                        <div class="text-red">
+                                            @SharedLocalizer.GetLocalizedHtmlString("notifyOverCountSendMail")
+                                        </div>
+
+                                    }
+                                    else
+                                    {
+                                        <div class="text-red">
+                                            @SharedLocalizer.GetLocalizedHtmlString("notifyOverCountSendSMS")
+                                        </div>
+                                    }
+                                    <div>
+                                        @SharedLocalizer.GetLocalizedHtmlString("questionRecieveCode")
+                                        @SharedLocalizer.GetLocalizedHtmlString("contactEmail")
+                                        <div class="inline-block blue--text">
+                                            support@twin.vn
+                                        </div>
+                                        @SharedLocalizer.GetLocalizedHtmlString("orPhoneNumber")
+                                        <div class="inline-block blue--text">
+                                            (+84) 973 254 654
+                                        </div>
+                                        @SharedLocalizer.GetLocalizedHtmlString("toSupport")
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            CountSendNotification: @Model.CountSendNotification,
+        },
+        methods: {
+            resendCode() {
+                var _this = this;
+                if (_this.CountSendNotification < 5) {
+                    $.get('/account/SendCode?verifyType=' + '@Model.VerifyType', function (response) {
+                        console.log(response);
+                        _this.CountSendNotification = response;
+                        $("#messageResendCode").fadeTo(10000, 500).slideUp(500, function () {
+                            $("#messageResendCode").slideUp(500);
+                        });
+                    });
+                }
+            }
+        }
+    })
+</script>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

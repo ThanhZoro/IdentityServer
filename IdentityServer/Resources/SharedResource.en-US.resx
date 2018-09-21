@@ -1,0 +1,601 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lengthRequired" xml:space="preserve">
+    <value>The {0} must be at least {2} and at max {1} characters long.</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="phoneRequired" xml:space="preserve">
+    <value>The Phone field is required.</value>
+  </data>
+  <data name="passwordRequired" xml:space="preserve">
+    <value>The Password field is required.</value>
+  </data>
+  <data name="usernameRequired" xml:space="preserve">
+    <value>The Username field is required.</value>
+  </data>
+  <data name="contactUs" xml:space="preserve">
+    <value>Contact us</value>
+  </data>
+  <data name="getStarted" xml:space="preserve">
+    <value>GET STARTED</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="emailInvalid" xml:space="preserve">
+    <value>Email field is invalid.</value>
+  </data>
+  <data name="emailRequired" xml:space="preserve">
+    <value>Email field is required.</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Full name</value>
+  </data>
+  <data name="aboutUs" xml:space="preserve">
+    <value>About us</value>
+  </data>
+  <data name="account" xml:space="preserve">
+    <value>your acccount</value>
+  </data>
+  <data name="accountAlready" xml:space="preserve">
+    <value>Account already</value>
+  </data>
+  <data name="anAccount" xml:space="preserve">
+    <value>an account</value>
+  </data>
+  <data name="back" xml:space="preserve">
+    <value>back</value>
+  </data>
+  <data name="blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+  <data name="business" xml:space="preserve">
+    <value>Grow your business to the next level</value>
+  </data>
+  <data name="careers" xml:space="preserve">
+    <value>Careers</value>
+  </data>
+  <data name="chooseCompany" xml:space="preserve">
+    <value>Choose restaurant</value>
+  </data>
+  <data name="community" xml:space="preserve">
+    <value>Community</value>
+  </data>
+  <data name="company" xml:space="preserve">
+    <value>account of restaurant</value>
+  </data>
+  <data name="continueSign" xml:space="preserve">
+    <value>Continue sign in to</value>
+  </data>
+  <data name="createCompany" xml:space="preserve">
+    <value>Create a new restaurant</value>
+  </data>
+  <data name="customerStories" xml:space="preserve">
+    <value>Customer Success Stories</value>
+  </data>
+  <data name="custormers" xml:space="preserve">
+    <value>Custormers</value>
+  </data>
+  <data name="custormerSucceed" xml:space="preserve">
+    <value>Customer succeed with Twin CRM</value>
+  </data>
+  <data name="external" xml:space="preserve">
+    <value>with external account</value>
+  </data>
+  <data name="forgotPass" xml:space="preserve">
+    <value>Forgot password</value>
+  </data>
+  <data name="iAgree" xml:space="preserve">
+    <value>I agree to</value>
+  </data>
+  <data name="learnMore" xml:space="preserve">
+    <value>LEAR MORE</value>
+  </data>
+  <data name="login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="manual" xml:space="preserve">
+    <value>Manual sign up account</value>
+  </data>
+  <data name="mobileApp" xml:space="preserve">
+    <value>Mobile App for Broker</value>
+  </data>
+  <data name="moreInfo" xml:space="preserve">
+    <value>More info</value>
+  </data>
+  <data name="namlong" xml:space="preserve">
+    <value>Floor 6th, Bitexco Nam Long building, 63A Vo Van Tan street, Ward 6, District 3, HCMC, Vietname</value>
+  </data>
+  <data name="news" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>next</value>
+  </data>
+  <data name="o2o" xml:space="preserve">
+    <value>O2O Tracking Solutions</value>
+  </data>
+  <data name="orSignIn" xml:space="preserve">
+    <value>Or sign in with Social account</value>
+  </data>
+  <data name="ourStory" xml:space="preserve">
+    <value>Our Story</value>
+  </data>
+  <data name="partners" xml:space="preserve">
+    <value>Partners</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="pleaseEnter" xml:space="preserve">
+    <value>Please enter an email address for this site below and click the Register button to finish logging in</value>
+  </data>
+  <data name="privacy" xml:space="preserve">
+    <value>Privacy</value>
+  </data>
+  <data name="privacyPolicy" xml:space="preserve">
+    <value>the T&amp;C and privacy policy</value>
+  </data>
+  <data name="product&amp;service" xml:space="preserve">
+    <value>Product &amp; Services Pricing</value>
+  </data>
+  <data name="products" xml:space="preserve">
+    <value>Products</value>
+  </data>
+  <data name="realEstate" xml:space="preserve">
+    <value>Advanced technology solutions for Real Estate</value>
+  </data>
+  <data name="rememberMe" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="sendUs" xml:space="preserve">
+    <value>Send us</value>
+  </data>
+  <data name="services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="signin" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="signinAccount" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="signinFacebook" xml:space="preserve">
+    <value>Sign in with Facebook</value>
+  </data>
+  <data name="signinGoogle" xml:space="preserve">
+    <value>Sign in with Google</value>
+  </data>
+  <data name="signup" xml:space="preserve">
+    <value>Sign up</value>
+  </data>
+  <data name="solutionDeveloper" xml:space="preserve">
+    <value>Solutions for Developer</value>
+  </data>
+  <data name="solutions" xml:space="preserve">
+    <value>Solutions</value>
+  </data>
+  <data name="successfullyAuthenticated" xml:space="preserve">
+    <value>You've successfully authenticated with</value>
+  </data>
+  <data name="t&amp;cs" xml:space="preserve">
+    <value>T &amp; Cs</value>
+  </data>
+  <data name="twinCrm" xml:space="preserve">
+    <value>What is Twin CRM?</value>
+  </data>
+  <data name="twinCrmContent" xml:space="preserve">
+    <value>Software solution designed for Real Estate to serve three players: Developer, Agency and Broker. It brings together all your customer information in a single, integrated platform that enables you to build a customer-centred business from marketing right through to sales, customer service and business analysis. This gives you more complete understanding of your custormer to drive your business's success.</value>
+  </data>
+  <data name="twinReal" xml:space="preserve">
+    <value>Twin real estate solutions</value>
+  </data>
+  <data name="username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="watchDemo" xml:space="preserve">
+    <value>WATCH DEMO</value>
+  </data>
+  <data name="CompanyAddress" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="CompanyCode" xml:space="preserve">
+    <value>Subdomain</value>
+  </data>
+  <data name="CompanyWebsite" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="createYour" xml:space="preserve">
+    <value>Create your restaurant</value>
+  </data>
+  <data name="enter" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="existCompany" xml:space="preserve">
+    <value>existing restaurant for</value>
+  </data>
+  <data name="help" xml:space="preserve">
+    <value>Need help</value>
+  </data>
+  <data name="other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="otherBusiness" xml:space="preserve">
+    <value>other business</value>
+  </data>
+  <data name="realEstateAgency" xml:space="preserve">
+    <value>Real Estate Agency</value>
+  </data>
+  <data name="realEstateDev" xml:space="preserve">
+    <value>Real Estate Developer</value>
+  </data>
+  <data name="ScaleId" xml:space="preserve">
+    <value>Number of employees</value>
+  </data>
+  <data name="signInWith" xml:space="preserve">
+    <value>Sign in with another account</value>
+  </data>
+  <data name="thereAre" xml:space="preserve">
+    <value>There are</value>
+  </data>
+  <data name="whichCompany" xml:space="preserve">
+    <value>Which restaurant do you want to coutinute</value>
+  </data>
+  <data name="yourMessage" xml:space="preserve">
+    <value>Your message</value>
+  </data>
+  <data name="yourName" xml:space="preserve">
+    <value>Your name</value>
+  </data>
+  <data name="activate" xml:space="preserve">
+    <value>Activate</value>
+  </data>
+  <data name="activation" xml:space="preserve">
+    <value>The activation code was send  your</value>
+  </data>
+  <data name="activeAccount" xml:space="preserve">
+    <value>Activate your account</value>
+  </data>
+  <data name="browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="companyCodeExisted" xml:space="preserve">
+    <value>Restaurant code is existed.</value>
+  </data>
+  <data name="companyCodeRequired" xml:space="preserve">
+    <value>Subdomain is required</value>
+  </data>
+  <data name="companyNameRequired" xml:space="preserve">
+    <value>Restaurant name is required</value>
+  </data>
+  <data name="companySuccessfully" xml:space="preserve">
+    <value>You have create restaurant successfully</value>
+  </data>
+  <data name="congratulations" xml:space="preserve">
+    <value>Congratulations</value>
+  </data>
+  <data name="continue" xml:space="preserve">
+    <value>Coutinue</value>
+  </data>
+  <data name="employee" xml:space="preserve">
+    <value>Employees</value>
+  </data>
+  <data name="number" xml:space="preserve">
+    <value>number</value>
+  </data>
+  <data name="pixelsMax" xml:space="preserve">
+    <value>pixels Maximum</value>
+  </data>
+  <data name="placeAddress" xml:space="preserve">
+    <value>Enter address</value>
+  </data>
+  <data name="placeCompanyName" xml:space="preserve">
+    <value>Restaurant name</value>
+  </data>
+  <data name="placeSubdomain" xml:space="preserve">
+    <value>subdomain</value>
+  </data>
+  <data name="resendCode" xml:space="preserve">
+    <value>Resend code</value>
+  </data>
+  <data name="size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="verification" xml:space="preserve">
+    <value>Enter verification code</value>
+  </data>
+  <data name="verify" xml:space="preserve">
+    <value>Verify</value>
+  </data>
+  <data name="verifyAccount" xml:space="preserve">
+    <value>Verify your account</value>
+  </data>
+  <data name="yourWebsite" xml:space="preserve">
+    <value>yourwebsite.com</value>
+  </data>
+  <data name="businessDomain" xml:space="preserve">
+    <value>Business Domain</value>
+  </data>
+  <data name="createCy" xml:space="preserve">
+    <value>Create restaurant</value>
+  </data>
+  <data name="createNot" xml:space="preserve">
+    <value>No restaurant has been created yet</value>
+  </data>
+  <data name="dontWorry" xml:space="preserve">
+    <value>Don't worry, we'll send you an email to reset
+your password. Please enter your email</value>
+  </data>
+  <data name="forgotPassword" xml:space="preserve">
+    <value>Forgot password</value>
+  </data>
+  <data name="getCode" xml:space="preserve">
+    <value>Didn't get you code? Sometimes it can take up to</value>
+  </data>
+  <data name="howShould" xml:space="preserve">
+    <value>How should we send you the code</value>
+  </data>
+  <data name="loginAgain" xml:space="preserve">
+    <value>Login again</value>
+  </data>
+  <data name="minutes" xml:space="preserve">
+    <value>minutes.If it's been longer than that</value>
+  </data>
+  <data name="phoneExisted" xml:space="preserve">
+    <value>Phone is existed.</value>
+  </data>
+  <data name="pleaseCheck" xml:space="preserve">
+    <value>Please check your email to reset your password.</value>
+  </data>
+  <data name="pleaseCreate" xml:space="preserve">
+    <value>please create a restaurant</value>
+  </data>
+  <data name="resetPass" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="usernameNotExits" xml:space="preserve">
+    <value>User is not exist.</value>
+  </data>
+  <data name="yourEmail" xml:space="preserve">
+    <value>Your Email</value>
+  </data>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Restaurant name</value>
+  </data>
+  <data name="loginAttempt" xml:space="preserve">
+    <value>Invalid login attempt</value>
+  </data>
+  <data name="changePass" xml:space="preserve">
+    <value>Change your password</value>
+  </data>
+  <data name="confirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="companyHeader" xml:space="preserve">
+    <value>Restaurant</value>
+  </data>
+  <data name="hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="hotline" xml:space="preserve">
+    <value>Hotline</value>
+  </data>
+  <data name="logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="updateProfile" xml:space="preserve">
+    <value>Update profile</value>
+  </data>
+  <data name="fullNameRequired" xml:space="preserve">
+    <value>Full name is required.</value>
+  </data>
+  <data name="emailHome" xml:space="preserve">
+    <value>Enter email</value>
+  </data>
+  <data name="phoneHome" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="usernameExisted" xml:space="preserve">
+    <value>Username  is existed.</value>
+  </data>
+  <data name="emailExisted" xml:space="preserve">
+    <value>Email is existed.</value>
+  </data>
+  <data name="usernameNotContainCompany" xml:space="preserve">
+    <value>Your account not exist in restaurant</value>
+  </data>
+  <data name="clickHere" xml:space="preserve">
+    <value>click here to log in</value>
+  </data>
+  <data name="please" xml:space="preserve">
+    <value>Please</value>
+  </data>
+  <data name="ResetPasswordTitle" xml:space="preserve">
+    <value>Your password has been reset</value>
+  </data>
+  <data name="blockAccount" xml:space="preserve">
+    <value>Your account is blocked</value>
+  </data>
+  <data name="confirmNewPassword" xml:space="preserve">
+    <value>Confirm new  password</value>
+  </data>
+  <data name="newPassword" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="oldPassword" xml:space="preserve">
+    <value>Old password</value>
+  </data>
+  <data name="activationByEmail" xml:space="preserve">
+    <value>Active code sent for you through email </value>
+  </data>
+  <data name="activationByPhone" xml:space="preserve">
+    <value>Active code sent for you through phone number </value>
+  </data>
+  <data name="verifyRemind" xml:space="preserve">
+    <value>Your account is already logged in. You must verify to active your account</value>
+  </data>
+  <data name="messageResendCode" xml:space="preserve">
+    <value>New active code is sent again for you</value>
+  </data>
+  <data name="activated" xml:space="preserve">
+    <value>Your account is activated.&lt;a href="/Company/Index"&gt; Choose your restaurant?&lt;/a&gt;</value>
+  </data>
+  <data name="invalidActivation" xml:space="preserve">
+    <value>Invalid activation code</value>
+  </data>
+  <data name="contactEmail" xml:space="preserve">
+    <value>Please contact us to email</value>
+  </data>
+  <data name="contactSMS" xml:space="preserve">
+    <value>Please contact us to phone number</value>
+  </data>
+  <data name="notifyOverCountSendMail" xml:space="preserve">
+    <value>The system was sent activation code to your email. Please check email and system will don't send new active code.</value>
+  </data>
+  <data name="notifyOverCountSendSMS" xml:space="preserve">
+    <value>The system was sent activation code to your phone number. Please check sms and system will don't send new active code.</value>
+  </data>
+  <data name="orEmail" xml:space="preserve">
+    <value>or email</value>
+  </data>
+  <data name="orPhoneNumber" xml:space="preserve">
+    <value>or phone number</value>
+  </data>
+  <data name="questionRecieveCode" xml:space="preserve">
+    <value>If you have not have been code?</value>
+  </data>
+  <data name="toSupport" xml:space="preserve">
+    <value>for support.</value>
+  </data>
+  <data name="otherCompany" xml:space="preserve">
+    <value>Other restaurant?</value>
+  </data>
+  <data name="firstNameRequired" xml:space="preserve">
+    <value>First name field is required</value>
+  </data>
+  <data name="uniqueCharacters" xml:space="preserve">
+    <value>The Password field must least 5 unique characters.</value>
+  </data>
+  <data name="yourCode" xml:space="preserve">
+    <value>Your code</value>
+  </data>
+</root>

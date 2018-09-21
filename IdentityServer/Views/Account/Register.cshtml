@@ -1,0 +1,118 @@
+﻿@inject LocService SharedLocalizer
+@model RegisterViewModel
+@{
+    ViewData["Title"] = SharedLocalizer.GetLocalizedHtmlString("Register");
+}
+
+<!-- Top content -->
+<div class="account" id="app">
+    <!-- Top menu -->
+    <nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="@Url.Content("~/")">
+                    <img src="~/assets/img/logo.png" class="img-responsive" />
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-bg" style="padding-top:0;">
+        <div class="container">
+            <div class="row">
+                <div class="form-center">
+                    <div class="col-sm-12 form-box wow">
+                        <div class="form-top">
+                            <div class="form-top text-center">
+                                <h2>Đăng ký</h2>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <form method="post" asp-controller="Account" asp-action="Register">
+                                <div class="form-group">
+                                    <label class="form-control-label">@SharedLocalizer.GetLocalizedHtmlString("FirstName") *</label>
+                                    <input asp-for="FirstName" class="form-control" placeholder="@SharedLocalizer.GetLocalizedHtmlString("FirstName")" />
+                                    <div class="has-danger">
+                                        <div><span asp-validation-for="FirstName" class="text-danger"></span></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">@SharedLocalizer.GetLocalizedHtmlString("LastName")</label>
+                                    <input asp-for="LastName" class="form-control" placeholder="@SharedLocalizer.GetLocalizedHtmlString("LastName")" />
+                                    <div class="has-danger">
+                                        <div><span asp-validation-for="LastName" class="text-danger"></span></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">@SharedLocalizer.GetLocalizedHtmlString("Phone") *</label>
+                                    <input asp-for="Phone" class="form-control" placeholder="@SharedLocalizer.GetLocalizedHtmlString("Phone")" />
+                                    <div class="has-danger">
+                                        <div><span asp-validation-for="Phone" class="text-danger"></span></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">@SharedLocalizer.GetLocalizedHtmlString("UserName") *</label>
+                                    <input asp-for="UserName" class="form-control" placeholder="@SharedLocalizer.GetLocalizedHtmlString("Email")" />
+                                    <div class="has-danger">
+                                        <div><span asp-validation-for="UserName" class="text-danger"></span></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">@SharedLocalizer.GetLocalizedHtmlString("Password") *</label>
+                                    <div style="position:relative">
+                                        <input asp-for="Password" id="password" class="form-control" placeholder="@SharedLocalizer.GetLocalizedHtmlString("Password")" />
+                                        <i class="custorm-eye" v-bind:class="{ 'flaticon-hide': !openEye,'flaticon-view': openEye }" id="eye" @@click="showPass()"></i>
+                                    </div>
+                                    <div class="has-danger">
+                                        <div><span asp-validation-for="Password" class="text-danger"></span></div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-info background-color-twin">Register</button>
+                            </form>
+                            <form asp-action="ExternalLogin" method="post" class="form-horizontal" style="margin-top:5px;">
+
+                                <div class="row top-1">
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-primary pointer social-button facebook" name="provider" value="Facebook">
+                                            <span class="typcn typcn-social-facebook custom-icon-buton"></span>
+                                            Facebook
+                                        </button>
+                                    </div>
+                                    <div class="col-md-12 top-1">
+                                        <button type="submit" class="btn btn-danger pointer social-button google" name="provider" value="Google" title="Log in using your Google account">
+                                            <span class="typcn typcn-social-google-plus custom-icon-buton"></span>
+                                            Google
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            openEye: false,
+            password: '',
+        },
+        methods: {
+            showPass() {
+                var password = document.getElementById("password");
+                if (password.type === "password") {
+                    password.type = "text";
+                    this.openEye = true;
+                } else {
+                    password.type = "password";
+                    this.openEye = false;
+                }
+            }
+        },
+        created() {
+
+        }
+    })
+</script>

@@ -1,0 +1,122 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject LocService SharedLocalizer
+@{
+    var user = await UserManager.GetUserAsync(User);
+    var active = user?.IsActive;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - IdentityServer</title>
+    <link rel="shortcut icon" href="~/images/favicon.ico">
+    <!-- CSS -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    @*<link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="~/assets/typicons/typicons.min.css">
+        <link rel="stylesheet" href="~/assets/css/animate.css">
+        <link rel="stylesheet" href="~/assets/css/form-elements.css">
+        <link rel="stylesheet" href="~/assets/css/style.css">
+        <link rel="stylesheet" href="~/assets/css/media-queries.css">*@
+    <link rel="stylesheet" href="~/css/site.min.css">
+    <link rel="stylesheet" href="~/css/custorm.css">
+    <link rel="stylesheet" href="~/flaticon/flaticon.css" asp-append-version="true" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Favicon and touch icons -->
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="~/assets/ico/apple-touch-icon-57-precomposed.png">
+    <script src="~/js/jquery-3.2.1.min.js"></script>
+    <script src="~/js/select2/js/select2.min.js"></script>
+    <link href='~/js/select2/css/select2.min.css' rel='stylesheet' type='text/css'>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+
+</head>
+<body>
+    <!-- Loader -->
+    @*<div class="loader">
+            <div class="loader-img"></div>
+        </div>*@
+
+
+    @RenderBody()
+    <!-- Footer -->
+    <footer>
+
+        <div class="container">
+            <div class="custorm-muti-lang">
+                <div class="profile-log dropdown d-inline-block">
+                    <span class="login" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropdownMenuButton"></span>
+                    @if (CultureInfo.CurrentCulture.ToString() == "vi-VN")
+                    {
+                        <a href="#" class="language-choose blue-twin" data-toggle="dropdown">
+                            Tiếng việt<i class="flaticon-down-arrow" style="margin-left:-15px"></i>
+                        </a>
+                        <ul class="dropdown-menu" id="dropdown-login">
+                            <li><a onclick="changeCultute('en-US')" href="#">English</a></li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <a href="#" class="language-choose blue-twin" data-toggle="dropdown">
+                            English<i class="flaticon-down-arrow" style="margin-left:-15px"></i>
+                        </a>
+                        <ul class="dropdown-menu" id="dropdown-login">
+                            <li><a href="#" onclick="changeCultute('vi-VN')">Tiếng việt</a></li>
+                        </ul>
+
+                    }
+                </div>
+            </div>
+            <div class="row" style="margin-top: -45px;">
+                <div class="col-sm-12 footer-copyright">
+                    Copyright &copy; 2018
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Javascript -->
+    @*<script src="~/assets/js/jquery-1.11.1.min.js"></script>
+        <script src="~/assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="~/assets/js/jquery.backstretch.min.js"></script>
+        <script src="~/assets/js/wow.min.js"></script>
+        <script src="~/assets/js/retina-1.1.0.min.js"></script>
+        <script src="~/assets/js/scripts.js"></script>*@
+    <script src="~/js/site.min.js"></script>
+
+    <!--[if lt IE 10]>
+        <script src="assets/js/placeholder.js"></script>
+    <![endif]-->
+
+    @RenderSection("Scripts", required: false)
+    <script>
+        function changeCultute(culture) {
+            var currentUrl = window.location.href;
+            var url = updateQueryStringParameter(currentUrl, 'ui_locales', culture);
+            location.href = url;
+        }
+        function updateQueryStringParameter(uri, key, value) {
+            var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+            var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+            if (uri.match(re)) {
+                return uri.replace(re, '$1' + key + "=" + value + '$2');
+            }
+            else {
+                return uri + separator + key + "=" + value;
+            }
+        }
+    </script>
+</body>
+</html>

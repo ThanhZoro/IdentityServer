@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject LocService SharedLocalizer
+@{
+    var user = await UserManager.GetUserAsync(User);
+    var active = user?.IsActive;
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="top-navbar-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a class="scroll-link" href="#features">Features</a></li>
+            <li><a class="scroll-link" href="#how-it-works">How it works</a></li>
+            <li><a class="scroll-link" href="#pricing">Price</a></li>
+            <li><a class="scroll-link" href="#about-us">About</a></li>
+            <li><a class="scroll-link" href="#testimonials">Testimonials</a></li>
+            <li><a class="btn btn-link-2" asp-controller="company" asp-action="Index">Your restaurant</a></li>
+        </ul>
+    </div>
+}
+else
+{
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="top-navbar-1">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a class="scroll-link" href="#features">Features</a></li>
+            <li><a class="scroll-link" href="#how-it-works">How it works</a></li>
+            <li><a class="scroll-link" href="#pricing">Price</a></li>
+            <li><a class="scroll-link" href="#about-us">About</a></li>
+            <li><a class="scroll-link" href="#testimonials">Testimonials</a></li>
+            <li><a class="btn btn-link-2" asp-controller="Account" asp-action="Login">@SharedLocalizer.GetLocalizedHtmlString("login")</a></li>
+        </ul>
+    </div>
+}

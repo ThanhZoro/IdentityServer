@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Company>
+@inject LocService SharedLocalizer
+@{
+    ViewData["Title"] = "Company";
+}
+
+<!-- Top content -->
+<div class="top-content">
+    <!-- Top menu -->
+    <nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="@Url.Content("~/")">
+                    <img src="~/assets/img/logo.png" class="img-responsive" />
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-bg" style="padding-top:0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7 text">
+                    <h1 class="wow fadeInLeftBig">Learn to Code in <strong>1 Month</strong></h1>
+                    <div class="description wow fadeInLeftBig">
+                        <p>
+                            We have been working very hard to create the new version of our course.
+                            It comes with a lot of new features, easy to follow videos and images. Check it out now!
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-5 form-box wow fadeInUp">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3>@SharedLocalizer.GetLocalizedHtmlString("chooseCompany")</h3>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        @if (Model.Count() != 0)
+                        {
+                            <div class="form-title">
+                                <p class="title-form">@SharedLocalizer.GetLocalizedHtmlString("thereAre") @Model.Count() @SharedLocalizer.GetLocalizedHtmlString("existCompany") @User.Identity.Name . @SharedLocalizer.GetLocalizedHtmlString("whichCompany") ?</p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="form-title">
+                                <p class="title-form">@SharedLocalizer.GetLocalizedHtmlString("createNot") @User.Identity.Name @SharedLocalizer.GetLocalizedHtmlString("pleaseCreate").</p>
+                            </div>
+                        }
+                        <form action="#" method="POST">
+                            <input type="hidden" />
+                            <div class="form-group">
+                                @if (Model.Count() == 0)
+                                {
+                                    <div class="company-empty">
+                                        <a asp-controller="company" asp-action="create"><i class="flaticon-signs"></i><br /><span>@SharedLocalizer.GetLocalizedHtmlString("createCy")?</span></a>
+                                    </div>
+                                }
+                                else
+                                {
+                                    @foreach (var item in Model)
+                                    {
+                                        <a href="http://@($"{item.CompanyCode}.{Environment.GetEnvironmentVariable("APP_DOMAIN")}")">
+                                            <div class="row" style="border-bottom:1px solid #ccc;border-top:1px solid #ccc;">
+                                                @if (@String.IsNullOrEmpty(item.LogoUrl))
+                                                {
+
+                                                    <div class="col-md-3"><div class="img-company" style="background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;width: 70px;height: 70px; background-image: url('../images/no-image.png');"></div></div>
+                                                }
+                                                else
+                                                {
+                                                    <div class="col-md-3"><div class="img-company" style="background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;width: 70px;height: 70px; background-image: url('@item.LogoUrl');"></div></div>
+                                                }
+                                                <div class="col-md-6" style="margin-top:8px;">@item.CompanyName <span aria-hidden="true" class="typcn typcn-arrow-right"></span></div>
+                                            </div>
+                                        </a>
+                                    }
+                                }
+
+                            </div>
+                        </form>
+
+                        <div class="button-sigin">
+                            @if (Model.Count() != 0)
+                            {
+                                <a asp-controller="company" asp-action="create">@SharedLocalizer.GetLocalizedHtmlString("createCompany")?</a>
+                            }
+                        </div>
+                        <div> <a asp-controller="account" asp-action="login">@SharedLocalizer.GetLocalizedHtmlString("signInWith")?</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

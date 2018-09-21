@@ -1,0 +1,172 @@
+﻿@model CreateCompany
+@inject SignInManager<ApplicationUser> SignInManager
+@inject LocService SharedLocalizer
+@{
+    ViewData["Title"] = "Create Company";
+}
+
+<!-- Top content -->
+<div class="top-content" id="app">
+    <!-- Top menu -->
+    <nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="@Url.Content("~/")">
+                    <img src="~/assets/img/logo.png" class="img-responsive" />
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="inner-bg" style="padding-top:0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7 text">
+                    <h1 class="wow fadeInLeftBig">Learn to Code in <strong>1 Month</strong></h1>
+                    <div class="description wow fadeInLeftBig">
+                        <p>
+                            We have been working very hard to create the new version of our course.
+                            It comes with a lot of new features, easy to follow videos and images. Check it out now!
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-5 form-box wow fadeInUp">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3>@SharedLocalizer.GetLocalizedHtmlString("createYour")</h3>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <form method="post" asp-action="Create">
+                            @*<div asp-validation-summary="All" class="text-danger"></div>*@
+                            <div class="form-group">
+                                <label>@SharedLocalizer.GetLocalizedHtmlString("CompanyName") *</label>
+                                <input asp-for="CompanyName" v-model="companyName" type="text" class="input form-control" placeholder="@SharedLocalizer.GetLocalizedHtmlString("enter") @SharedLocalizer.GetLocalizedHtmlString("placeCompanyName")" />
+                                <span class="text-danger" asp-validation-for="CompanyName"></span>
+                            </div>
+                            <div class="form-group ">
+                                <label>@SharedLocalizer.GetLocalizedHtmlString("CompanyCode") *</label>
+                                <input asp-for="CompanyCode" v-model="companyCode" type="text" class="input form-control" placeholder="@SharedLocalizer.GetLocalizedHtmlString("enter") @SharedLocalizer.GetLocalizedHtmlString("placeSubdomain")" />
+                                <span class="text-danger" asp-validation-for="CompanyCode"></span>
+                                <p class="link text-left">http://{{companyCode}}.@Environment.GetEnvironmentVariable("APP_DOMAIN")</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-business">@SharedLocalizer.GetLocalizedHtmlString("businessDomain")</label>
+                                <select class="input form-control" asp-for="CompanyType" id='selUser'>
+                                    <option value="">@Html.Raw(SharedLocalizer.GetLocalizedHtmlString("businessDomain"))...</option>
+                                    <option value="Arts and Entertainment">Arts and Entertainment</option>
+                                    <option value="Automotive">Automotive</option>
+                                    <option value="Beaty and Fitness">Beaty and Fitness</option>
+                                    <option value="Books and Literature">Books and Literature</option>
+                                    <option value="Business and Industrial Markets">Business and Industrial Markets</option>
+                                    <option value="Computers and Electronics">Computers and Electronics</option>
+                                    <option value="Finance">Finance</option>
+                                    <option value="Food and Drink">Food and Drink</option>
+                                    <option value="Games">Games</option>
+                                    <option value="Healthcare">Healthcare</option>
+                                    <option value="Hobbies and Leisure">Hobbies and Leisure</option>
+                                    <option value="Home and Garden">Home and Garden</option>
+                                    <option value="Internet and Telecom">Internet and Telecom</option>
+                                    <option value="Jobs and Education">Jobs and Education</option>
+                                    <option value="Law and Goverment">Law and Goverment</option>
+                                    <option value="News">News</option>
+                                    <option value="Online Communities">Online Communities</option>
+
+                                    <option value="People and Society">People and Society</option>
+                                    <option value="Pets and Animals">Pets and Animals</option>
+                                    <option value="Property">Property</option>
+                                    <option value="Reference">Reference</option>
+                                    <option value="Science">Science</option>
+                                    <option value="Shopping">Shopping</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Travel">Travel</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group" id="employee">
+                                <label asp-for="ScaleId"></label>
+                                <select class="input form-control" asp-for="ScaleId" id="number-employee">
+                                    <option value="">@Html.Raw(SharedLocalizer.GetLocalizedHtmlString("employee"))...</option>
+                                    <option value="01-05 Employer">01-05 @Html.Raw(SharedLocalizer.GetLocalizedHtmlString("employee"))</option>
+                                    <option value="05-20 Employer">05-20 @Html.Raw(SharedLocalizer.GetLocalizedHtmlString("employee"))</option>
+                                    <option value="20-50 Employer">20-50 @Html.Raw(SharedLocalizer.GetLocalizedHtmlString("employee"))</option>
+                                    <option value="50-250 Employer">50-250 @Html.Raw(SharedLocalizer.GetLocalizedHtmlString("employee"))</option>
+                                    <option value="> 250 Employer">>250 @Html.Raw(SharedLocalizer.GetLocalizedHtmlString("employee"))</option>
+                                </select>
+                            </div>
+                            <div class="form-group ">
+                                <label asp-for="CompanyAddress"></label>
+                                <input asp-for="CompanyAddress" type="text" id="address" class="input form-control" placeholder="" />
+                                <span class="text-danger" asp-validation-for="CompanyAddress"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CompanyWebsite"></label>
+                                <input asp-for="CompanyWebsite" type="text" class="input form-control" placeholder="http://@SharedLocalizer.GetLocalizedHtmlString("yourWebsite")" />
+                                <span class="text-danger" asp-validation-for="CompanyWebsite"></span>
+                            </div>
+                            <div class="button-sigin">
+                                <button class="btn btn-primary pointer btn-block" type="submit">@SharedLocalizer.GetLocalizedHtmlString("createYour")</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            companyName: '@Model.CompanyName',
+            companyCode: '@Model.CompanyCode'
+        },
+
+        methods: {
+            /*** Code custorm data  **/
+            change_alias: function (alias) {
+                var str = alias;
+                str = str.toLowerCase();
+                str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+                str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+                str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+                str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+                str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+                str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+                str = str.replace(/đ/g, "d");
+                str = str.replace(/!|@@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|-|`|{|}|\||\\/g, " ");
+                str = str.replace(/ + /g, " ");
+                str = str.replace(/\s+/g, '');
+                str = str.trim();
+                return str;
+            }
+        },
+        mounted() {
+            $('select').select2();
+        },
+        watch: {
+            companyName: function() {
+                let companycode = this.change_alias(this.companyName);
+                this.companyCode = companycode;
+            },
+            companycode: function () {
+                let companycode = this.change_alias(this.companycode);
+                this.companyCode = companycode;
+            }
+
+        }
+    })
+</script>
+<script>
+    function activatePlacesSearch() {
+        var input = document.getElementById('address');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+    }
+</script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpUZo6wyhpSCfcVOkiPe1E8UpaGdIl9gQ&libraries=places&callback=activatePlacesSearch"></script>
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
+
+
